@@ -1,24 +1,23 @@
-Here’s a more **natural, human-friendly, and detailed README** for your `khmer-ip-generator` project. I've avoided an "AI-written" tone by adding real-world context, examples, and a friendly voice while keeping it professional. I also added instructions for various languages/frameworks commonly used.
+https://en.ipshu.com/picture/175.100.53.png
+# Khmer IP Generator
 
----
+A small, dependency-free JavaScript library for generating random IP addresses allocated to Cambodia. It is intended for testing and simulation tasks such as geo-based feature testing, analytics, and access control validation.
 
-# 🇰🇭 Khmer IP Generator
+--
 
-A lightweight, dependency-free JavaScript library for generating **random Cambodian (Khmer) IP addresses** from verified IP ranges. Useful for testing geo-based features, localization, analytics, or security systems.
+## Installation
 
----
-
-## 📦 Installation
+Install from npm:
 
 ```bash
 npm install khmer-ip-generator
 ```
 
----
+--
 
-## 🚀 Quick Start
+## Quick start
 
-### 🔁 Generate a single IP
+Generate a single IP address:
 
 ```js
 import { generateKhmerIp } from 'khmer-ip-generator';
@@ -27,7 +26,7 @@ const ip = generateKhmerIp();
 console.log(ip); // e.g., "103.111.197.24"
 ```
 
-### 🔢 Generate multiple IPs
+Generate multiple IP addresses:
 
 ```js
 import { generateMultipleKhmerIps } from 'khmer-ip-generator';
@@ -36,42 +35,39 @@ const ips = generateMultipleKhmerIps(5);        // 5 random IPs
 const uniqueIps = generateMultipleKhmerIps(5, true); // 5 unique IPs
 ```
 
----
+--
 
-## 🧠 API Reference
+## API reference
 
-### ✅ `generateKhmerIp()`
+generateKhmerIp()
+: Returns a single random IP address drawn from the library's Cambodia IP ranges.
 
-Returns a single random IP address from the list of Cambodian IP ranges.
+generateMultipleKhmerIps(count, unique = false)
+: Generates multiple IP addresses.
 
-### ✅ `generateMultipleKhmerIps(count, unique = false)`
+- count: Number of IPs to generate.
+- unique (optional): When true, ensures all generated IPs are unique (if possible).
 
-Generates multiple IPs.
+getAllKhmerIpRanges()
+: Returns an array of known IP ranges assigned to Cambodia.
 
-* `count`: Number of IPs to generate.
-* `unique` *(optional)*: If `true`, ensures all generated IPs are unique.
+getKhmerIpRangesCount()
+: Returns the number of IP ranges in the dataset.
 
-### ✅ `getAllKhmerIpRanges()`
+isKhmerIp(ip)
+: Returns true if the provided IP address falls within one of the Cambodia IP ranges.
 
-Returns an array of all known IP ranges assigned to Cambodia.
-
-### ✅ `getKhmerIpRangesCount()`
-
-Returns how many IP ranges are in the current dataset.
-
-### ✅ `isKhmerIp(ip)`
-
-Checks whether the provided IP belongs to a Cambodian IP range.
+Example:
 
 ```js
-isKhmerIp("103.111.197.24"); // true or false
+isKhmerIp('103.111.197.24'); // true or false
 ```
 
----
+--
 
-## 🛠️ Usage Examples
+## Usage examples
 
-### CommonJS (Node.js)
+CommonJS (Node.js):
 
 ```js
 const khmerIp = require('khmer-ip-generator');
@@ -80,22 +76,22 @@ console.log(khmerIp.generateKhmerIp());
 console.log(khmerIp.generateMultipleKhmerIps(3));
 ```
 
-### ES Modules (Vue/Nuxt/React)
+ES Modules:
 
 ```js
 import { generateKhmerIp, isKhmerIp } from 'khmer-ip-generator';
 
 const ip = generateKhmerIp();
-console.log(isKhmerIp(ip)); // true
+console.log(isKhmerIp(ip));
 ```
 
-### Vue 3 Composition API Example
+Vue 3 (Composition API) example:
 
 ```vue
 <template>
   <div>
-    <button @click="generateNewIp">🎲 Generate New IP</button>
-    <p>🌐 {{ currentIp }}</p>
+    <button @click="generateNewIp">Generate new IP</button>
+    <p>{{ currentIp }}</p>
   </div>
 </template>
 
@@ -111,45 +107,36 @@ const generateNewIp = () => {
 </script>
 ```
 
----
+--
 
-## 🔌 Use Cases
+## Use cases
 
-* 🧪 QA testing geo-restricted features (e.g., location-based login)
-* 🌐 Analytics & regional simulations
-* 🔐 IP whitelisting simulations
-* 🇰🇭 Apps localized for Cambodian users
+- QA testing for geo-restricted or localized behavior
+- Analytics and regional simulations
+- IP whitelisting or access-control testing
+- Development of Cambodia-targeted features
 
----
+--
 
-## 🔤 Language Support
+## Environment support
 
-You can use `khmer-ip-generator` in any modern JavaScript environment:
+The package works in modern JavaScript environments:
 
-| Environment | Supported              |
-| ----------- | ---------------------- |
-| Node.js     | ✅ Yes                  |
-| Vue.js      | ✅ Yes                  |
-| Nuxt.js     | ✅ Yes                  |
-| React       | ✅ Yes                  |
-| Next.js     | ✅ Yes                  |
-| TypeScript  | ✅ Yes (built-in types) |
-| Vanilla JS  | ✅ Yes                  |
+- Node.js
+- Vue, Nuxt, React, Next.js
+- TypeScript (includes type definitions)
+- Vanilla JavaScript
 
----
+--
 
-## 📚 Behind the Scenes
+## Data sources
 
-The library uses a curated list of **Cambodia-allocated IP ranges** from public sources like APNIC and RIPE. These are stored internally and randomly selected when generating IPs.
+The IP ranges are derived from public routing registries and allocation data (for example APNIC and RIPE). They are maintained in the project and updated as needed.
 
----
+--
 
-## 📄 License
+## License
 
-MIT © [Rithy Tep](https://github.com/your-github-profile)
+MIT © Rithy Tep
 
-Free to use, modify, and share. Contributions welcome!
-
----
-
-Would you like a badge set (`npm version`, `build status`, `license`, etc.), or auto-generated TypeDocs / site version for docs? I can help you polish that too.
+This project is free to use and modify. Contributions are welcome.
