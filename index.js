@@ -365,27 +365,27 @@ function generateKhmerIp() {
  */
 function generateMultipleKhmerIps(count = 1, unique = false) {
   if (count <= 0) return [];
-  
+
   const ips = [];
   const usedIndices = new Set();
-  
+
   for (let i = 0; i < count; i++) {
     if (unique && usedIndices.size >= cambodianIpRanges.length) {
       break;
     }
-    
+
     let randomIndex;
     do {
       randomIndex = Math.floor(Math.random() * cambodianIpRanges.length);
     } while (unique && usedIndices.has(randomIndex));
-    
+
     if (unique) {
       usedIndices.add(randomIndex);
     }
-    
+
     ips.push(cambodianIpRanges[randomIndex]);
   }
-  
+
   return ips;
 }
 
