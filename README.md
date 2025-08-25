@@ -1,4 +1,5 @@
-https://en.ipshu.com/picture/175.100.53.png
+![Khmer IP Generator](https://en.ipshu.com/picture/175.100.53.png)
+
 # Khmer IP Generator
 
 A small, dependency-free JavaScript library for generating random IP addresses allocated to Cambodia. It is intended for testing and simulation tasks such as geo-based feature testing, analytics, and access control validation.
