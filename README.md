@@ -24,7 +24,7 @@ Generate a single IP address:
 import { generateKhmerIp } from 'khmer-ip-generator';
 
 const ip = generateKhmerIp();
-console.log(ip); // e.g., "103.111.197.24"
+console.log(ip); // e.g., "103.164.182.0"
 ```
 
 Generate multiple IP addresses:
