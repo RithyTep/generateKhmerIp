@@ -1,4 +1,4 @@
-import { cambodianIpRanges } from './cambodianIpRanges.cjs';
+import cambodianIpRanges from './cambodianIpRanges.cjs';
 
 /**
  * Generate a random Cambodian IP address from known IP ranges
@@ -12,7 +12,7 @@ function generateKhmerIp() {
  * Generate multiple random Cambodian IP addresses
  * @param {number} count - Number of IP addresses to generate
  * @param {boolean} unique - Whether to ensure uniqueness (default: false)
- * @returns {string[]} Array of Cambodian IP addresses
+ * @returns {string[]} Array of Cambodian IP
  */
 function generateMultipleKhmerIps(count = 1, unique = false) {
   if (count <= 0) return [];
