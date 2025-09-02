@@ -11,7 +11,7 @@ A lightweight, dependency-free JavaScript library for generating random Cambodia
 [![GitHub Issues](https://img.shields.io/github/issues/rithytep/generateKhmerIp)](https://github.com/rithytep/generateKhmerIp/issues)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/rithytep/generateKhmerIp/ci.yml)](https://github.com/rithytep/generateKhmerIp/actions)
 
-**Version**: 1.2.9
+**Version**: 2.0.0
 **Maintainer**: Rithy Tep ([YouTube](https://www.youtube.com/@rithy500) | [Facebook](http://fb.com/rithy500))
 **Last Updated**: May 2025
 
@@ -238,7 +238,7 @@ Use `generateMultipleKhmerIps(count, true)` to ensure unique IP addresses.
 ## Troubleshooting
 
 - **Invalid IP Generated?**
-  - Ensure you're using the latest version (`1.2.9`).
+  - Ensure you're using the latest version (`2.0.0`).
   - Verify the IP with `isKhmerIp(ip)` to confirm it’s in a Cambodian range.
 - **Performance Issues?**
   - The library is lightweight, but generating large numbers of unique IPs (e.g., >10,000) may be slower due to uniqueness checks.
@@ -281,7 +281,7 @@ For bugs, feature requests, or questions, visit our [GitHub Issues](https://gith
 
 ---
 
-**Version**: 1.2.9
+**Version**: 2.0.0
 **Repository**: [github.com/rithytep/generateKhmerIp](https://github.com/rithytep/generateKhmerIp)
 
 ---
