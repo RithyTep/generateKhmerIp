@@ -1,4 +1,4 @@
-import { cambodianIpRanges } from './cambodianIpRanges.js';
+import { cambodianIpRanges } from './cambodianIpRanges.cjs';
 
 /**
  * Generate a random Cambodian IP address from known IP ranges
