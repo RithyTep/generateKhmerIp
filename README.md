@@ -1,143 +1,287 @@
-![Khmer IP Generator](https://en.ipshu.com/picture/175.100.53.png)
+---
 
 # Khmer IP Generator
 
-A small, dependency-free JavaScript library for generating random IP addresses allocated to Cambodia. It is intended for testing and simulation tasks such as geo-based feature testing, analytics, and access control validation.
+![Khmer IP Generator](https://en.ipshu.com/country-picture/KH.png)
 
---
+A lightweight, dependency-free JavaScript library for generating random Cambodian (Khmer) IP addresses from verified IP ranges. Ideal for testing geo-based features, localization systems, analytics platforms, and security applications.
+
+[![npm version](https://img.shields.io/npm/v/khmer-ip-generator.svg)](https://www.npmjs.com/package/khmer-ip-generator)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues/rithytep/generateKhmerIp)](https://github.com/rithytep/generateKhmerIp/issues)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/rithytep/generateKhmerIp/ci.yml)](https://github.com/rithytep/generateKhmerIp/actions)
+
+**Version**: 1.2.9
+**Maintainer**: Rithy Tep ([YouTube](https://www.youtube.com/@rithy500) | [Facebook](http://fb.com/rithy500))
+**Last Updated**: May 2025
+
+---
+
+## Features
+
+- **Lightweight**: No runtime dependencies, minimal bundle size.
+- **Accurate**: Uses verified Cambodian IP ranges from APNIC and other registries.
+- **Versatile**: Supports Node.js, React, Vue, Angular, Svelte, Next.js, Nuxt.js, and more.
+- **TypeScript Ready**: Includes built-in type definitions.
+
+---
 
 ## Installation
 
-Install from npm:
+Install via npm:
 
 ```bash
 npm install khmer-ip-generator
 ```
 
---
+Or with Yarn:
 
-## Quick start
+```bash
+yarn add khmer-ip-generator
+```
 
-Generate a single IP address:
+---
 
-```js
+## Quick Start
+
+### Generate a Single IP
+
+```javascript
 import { generateKhmerIp } from 'khmer-ip-generator';
 
 const ip = generateKhmerIp();
-console.log(ip); // e.g., "103.164.182.0"
+console.log(ip); // Example: "103.111.197.24"
 ```
 
-Generate multiple IP addresses:
+### Generate Multiple IPs
 
-```js
+```javascript
 import { generateMultipleKhmerIps } from 'khmer-ip-generator';
 
-const ips = generateMultipleKhmerIps(5);        // 5 random IPs
+const ips = generateMultipleKhmerIps(5); // 5 random IPs
 const uniqueIps = generateMultipleKhmerIps(5, true); // 5 unique IPs
+console.log(ips); // Example: ["103.111.197.24", "115.178.245.12", ...]
 ```
 
---
+---
 
-## API reference
+## API Reference
 
-generateKhmerIp()
-: Returns a single random IP address drawn from the library's Cambodia IP ranges.
+| Function                     | Description                                              | Parameters                              | Returns       |
+|------------------------------|----------------------------------------------------------|-----------------------------------------|---------------|
+| `generateKhmerIp()`          | Generates a random Cambodian IP address.                  | None                                    | `string`      |
+| `generateMultipleKhmerIps(count, unique?)` | Generates multiple random IPs.              | `count: number`, `unique?: boolean`     | `string[]`    |
+| `isKhmerIp(ip)`              | Validates if an IP belongs to a Cambodian range.          | `ip: string`                            | `boolean`     |
+| `getAllKhmerIpRanges()`      | Returns all Cambodian IP ranges.                         | None                                    | `string[]`    |
+| `getKhmerIpRangesCount()`    | Returns the count of Cambodian IP ranges.                 | None                                    | `number`      |
 
-generateMultipleKhmerIps(count, unique = false)
-: Generates multiple IP addresses.
+**Example**:
 
-- count: Number of IPs to generate.
-- unique (optional): When true, ensures all generated IPs are unique (if possible).
+```javascript
+import { isKhmerIp, getAllKhmerIpRanges } from 'khmer-ip-generator';
 
-getAllKhmerIpRanges()
-: Returns an array of known IP ranges assigned to Cambodia.
-
-getKhmerIpRangesCount()
-: Returns the number of IP ranges in the dataset.
-
-isKhmerIp(ip)
-: Returns true if the provided IP address falls within one of the Cambodia IP ranges.
-
-Example:
-
-```js
-isKhmerIp('103.111.197.24'); // true or false
+console.log(isKhmerIp("103.111.197.24")); // true or false
+console.log(getAllKhmerIpRanges()); // ["103.111.192.0/18", ...]
 ```
 
---
+---
 
-## Usage examples
+## Framework Integrations
 
-CommonJS (Node.js):
+### Node.js (CommonJS)
 
-```js
-const khmerIp = require('khmer-ip-generator');
-
-console.log(khmerIp.generateKhmerIp());
-console.log(khmerIp.generateMultipleKhmerIps(3));
+```javascript
+const { generateKhmerIp } = require('khmer-ip-generator');
+console.log(generateKhmerIp()); // "103.111.197.24"
 ```
 
-ES Modules:
+### React (Hooks)
 
-```js
-import { generateKhmerIp, isKhmerIp } from 'khmer-ip-generator';
+```jsx
+import React, { useState } from 'react';
+import { generateKhmerIp } from 'khmer-ip-generator';
 
-const ip = generateKhmerIp();
-console.log(isKhmerIp(ip));
+function IpGenerator() {
+  const [ip, setIp] = useState(generateKhmerIp());
+
+  return (
+    <div>
+      <button onClick={() => setIp(generateKhmerIp())}>New IP</button>
+      <p>IP: {ip}</p>
+    </div>
+  );
+}
+export default IpGenerator;
 ```
 
-Vue 3 (Composition API) example:
+### Vue 3 (Composition API)
 
 ```vue
 <template>
   <div>
-    <button @click="generateNewIp">Generate new IP</button>
-    <p>{{ currentIp }}</p>
+    <button @click="generateIp">Generate IP</button>
+    <p>IP: {{ ip }}</p>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue';
 import { generateKhmerIp } from 'khmer-ip-generator';
 
-const currentIp = ref(generateKhmerIp());
-
-const generateNewIp = () => {
-  currentIp.value = generateKhmerIp();
+const ip = ref(generateKhmerIp());
+const generateIp = () => {
+  ip.value = generateKhmerIp();
 };
 </script>
 ```
 
---
+### Angular (Service)
 
-## Use cases
+```typescript
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { generateKhmerIp } from 'khmer-ip-generator';
 
-- QA testing for geo-restricted or localized behavior
-- Analytics and regional simulations
-- IP whitelisting or access-control testing
-- Development of Cambodia-targeted features
+@Injectable({ providedIn: 'root' })
+export class KhmerIpService {
+  generateIp(): Observable<string> {
+    return of(generateKhmerIp());
+  }
+}
+```
 
---
+### Svelte
 
-## Environment support
+```svelte
+<script>
+  import { generateKhmerIp } from 'khmer-ip-generator';
+  let ip = generateKhmerIp();
 
-The package works in modern JavaScript environments:
+  function generateIp() {
+    ip = generateKhmerIp();
+  }
+</script>
 
-- Node.js
-- Vue, Nuxt, React, Next.js
-- TypeScript (includes type definitions)
-- Vanilla JavaScript
+<div>
+  <button on:click={generateIp}>Generate IP</button>
+  <p>IP: {ip}</p>
+</div>
+```
 
---
+### Next.js (API Route)
 
-## Data sources
+```javascript
+// pages/api/ip.js
+import { generateKhmerIp } from 'khmer-ip-generator';
 
-The IP ranges are derived from public routing registries and allocation data (for example APNIC and RIPE). They are maintained in the project and updated as needed.
+export default function handler(req, res) {
+  if (req.method === 'GET') {
+    res.status(200).json({ ip: generateKhmerIp() });
+  } else {
+    res.status(405).json({ error: 'Method Not Allowed' });
+  }
+}
+```
 
---
+---
+
+## Use Cases
+
+- **Quality Assurance**: Test geographic restrictions, location-based authentication, and regional content delivery.
+- **Analytics**: Simulate regional traffic, analyze geographic data, or conduct market research.
+- **Security**: Simulate IP whitelists, test access controls, or assess network security.
+- **Localization**: Validate Cambodia-specific features or personalize regional content.
+
+---
+
+## Technical Details
+
+### Data Source
+IP ranges are sourced from [APNIC](https://www.apnic.net/) and other regional internet registries, ensuring accuracy and compliance.
+
+### Performance
+- **Zero Dependencies**: Minimal bundle size.
+- **Fast Generation**: Optimized random IP generation.
+- **Memory Efficient**: Lazy-loaded data structures.
+- **Thread-Safe**: Suitable for multi-threaded environments.
+
+### Compatibility
+
+| Framework/Environment | Support | TypeScript | SSR |
+|-----------------------|---------|------------|-----|
+| Node.js               | ✅       | ✅          | ✅   |
+| React                 | ✅       | ✅          | ✅   |
+| Vue.js                | ✅       | ✅          | ✅   |
+| Angular               | ✅       | ✅          | ✅   |
+| Svelte                | ✅       | ✅          | ✅   |
+| Next.js               | ✅       | ✅          | ✅   |
+| Nuxt.js               | ✅       | ✅          | ✅   |
+
+---
+
+## FAQs
+
+### Why use Khmer IP Generator?
+It provides accurate Cambodian IP addresses for testing geo-specific features without relying on external APIs, ensuring privacy and performance.
+
+### How are IP ranges verified?
+Ranges are sourced from APNIC and cross-checked with other registries for accuracy.
+
+### Can I use this in production?
+This library is designed for testing and development. For production, ensure compliance with local regulations.
+
+### What if I need unique IPs?
+Use `generateMultipleKhmerIps(count, true)` to ensure unique IP addresses.
+
+---
+
+## Troubleshooting
+
+- **Invalid IP Generated?**
+  - Ensure you're using the latest version (`1.2.9`).
+  - Verify the IP with `isKhmerIp(ip)` to confirm it’s in a Cambodian range.
+- **Performance Issues?**
+  - The library is lightweight, but generating large numbers of unique IPs (e.g., >10,000) may be slower due to uniqueness checks.
+- **Framework Errors?**
+  - Check for correct imports (ES Modules vs. CommonJS).
+  - Ensure TypeScript is configured if using types.
+
+File issues at [GitHub Issues](https://github.com/rithytep/generateKhmerIp/issues).
+
+---
+
+## Contributing
+
+We welcome contributions! Follow these steps:
+
+1. Fork the repository: [github.com/rithytep/generateKhmerIp](https://github.com/rithytep/generateKhmerIp)
+2. Create a feature branch (`git checkout -b feature/your-feature`).
+3. Write tests for new functionality.
+4. Follow the existing code style (use ESLint/Prettier).
+5. Update documentation for API changes.
+6. Submit a pull request with a clear description.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
 
 ## License
 
-MIT © Rithy Tep
+[MIT License](LICENSE) - Free for personal and commercial use.
 
-This project is free to use and modify. Contributions are welcome.
+---
+
+## Support
+
+For bugs, feature requests, or questions, visit our [GitHub Issues](https://github.com/rithytep/generateKhmerIp/issues) page or contact the maintainer:
+
+- **Maintainer**: Rithy Tep
+- **YouTube**: [youtube.com/@rithy500](https://www.youtube.com/@rithy500)
+- **Facebook**: [fb.com/rithy500](http://fb.com/rithy500)
+
+---
+
+**Version**: 1.2.9
+**Repository**: [github.com/rithytep/generateKhmerIp](https://github.com/rithytep/generateKhmerIp)
+
+---
