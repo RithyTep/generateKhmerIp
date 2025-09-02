@@ -1,34 +1,35 @@
 {
-    "name": "khmer-ip-generator",
-    "version": "2.0.4",
-    "description": "Generate random Cambodian (Khmer) IP addresses from known IP ranges",
-    "main": "index.js",
-    "module": "index.esm.js",
-    "types": "index.d.ts",
-    "scripts": {
-        "test": "node test.js",
-        "sync:version": "node ./scripts/sync-version.js",
-        "prebuild": "npm run sync:version",
-        "prepack": "npm run sync:version",
-        "prepublishOnly": "npm run sync:version",
-        "build": "node build.js"
-    },
-    "keywords": [
-        "khmer",
-        "cambodia",
-        "ip",
-        "generator",
-        "random",
-        "network"
-    ],
-    "author": "Rithy Tep",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/RithyTep/generateKhmerIp.git"
-    },
-    "bugs": {
-        "url": "https://github.com/RithyTep/generateKhmerIp/issues"
-    },
-    "homepage": "https://github.com/RithyTep/generateKhmerIp#readme"
+  "name": "khmer-ip-generator",
+  "version": "2.0.4",
+  "description": "Generate random Cambodian (Khmer) IP addresses from known IP ranges",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node test.js",
+    "sync:version": "node ./scripts/sync-version.js",
+    "prebuild": "npm run sync:version",
+    "prepack": "npm run sync:version",
+    "prepublishOnly": "npm run sync:version",
+    "build": "node build.js",
+    "release": "npm test && npm run build && npm version patch -m 'chore(release): %s' && git push origin HEAD --follow-tags && npm publish --access public"
+  },
+  "keywords": [
+    "khmer",
+    "cambodia",
+    "ip",
+    "generator",
+    "random",
+    "network"
+  ],
+  "author": "Rithy Tep",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RithyTep/generateKhmerIp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RithyTep/generateKhmerIp/issues"
+  },
+  "homepage": "https://github.com/RithyTep/generateKhmerIp#readme"
 }

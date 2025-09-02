@@ -10,11 +10,6 @@ export declare function generateKhmerIp(): string;
 export declare function generateMultipleKhmerIps(count?: number, unique?: boolean): string[];
 
 /**
- * Get all available Cambodian IP ranges
- */
-// getAllKhmerIpRanges intentionally removed from public types to avoid exposing raw ranges
-
-/**
  * Get the total count of available Cambodian IP ranges
  */
 export declare function getKhmerIpRangesCount(): number;

@@ -37,15 +37,6 @@ function generateMultipleKhmerIps(count = 1, unique = false) {
   return ips;
 }
 
-
-/**
- * Get all available Cambodian IP ranges
- * @returns {string[]} Array of all Cambodian IP ranges
- */
-function getAllKhmerIpRanges() {
-  throw new Error('Access to raw IP ranges is restricted. Use getKhmerIpRangesCount() instead.');
-}
-
 /**
  * Get the total count of available Cambodian IP ranges
  * @returns {number} Total number of IP ranges available
