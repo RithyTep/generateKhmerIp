@@ -10,18 +10,11 @@ A lightweight, dependency-free JavaScript library for generating random Cambodia
 [![Build Status](https://img.shields.io/github/actions/workflow/status/rithytep/generateKhmerIp/ci.yml)](https://github.com/rithytep/generateKhmerIp/actions)
 
 
-Live demo: [ip-khmer-generator.rithytep.online](https://ip-khmer-generator.rithytep.online) · Video demo: [Watch video](https://zcp184l8mpgeuiph.public.blob.vercel-storage.com/demo-ip-generator.mp4)
+Live demo: [Embedded demo page (iframe)](docs/demo.html) · Hosted demo: [ip-khmer-generator.rithytep.online](https://ip-khmer-generator.rithytep.online)
 
-<details>
-<summary>Embedded video demo (click to expand)</summary>
+[![Watch demo](https://img.shields.io/badge/Watch%20Demo-Play-red)](https://zcp184l8mpgeuiph.public.blob.vercel-storage.com/demo-ip-generator.mp4)
 
-<div style="max-width:100%;">
-  <iframe src="https://zcp184l8mpgeuiph.public.blob.vercel-storage.com/demo-ip-generator.mp4" width="800" height="450" frameborder="0" allowfullscreen title="Khmer IP Generator demo"></iframe>
-</div>
-
-</details>
-
-**Version**: 2.0.9
+**Version**: 2.0.10
 **Maintainer**: Rithy Tep ([YouTube](https://www.youtube.com/@rithy500) | [Facebook](http://fb.com/rithy500))
 **Last Updated**: May 2025
 
@@ -287,7 +280,7 @@ For bugs, feature requests, or questions, visit our [GitHub Issues](https://gith
 
 ---
 
-**Version**: 2.0.9
+**Version**: 2.0.10
 **Repository**: [github.com/rithytep/generateKhmerIp](https://github.com/rithytep/generateKhmerIp)
 
 ---
