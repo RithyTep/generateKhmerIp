@@ -11,7 +11,7 @@ A lightweight, dependency-free JavaScript library for generating random Cambodia
 [![GitHub Issues](https://img.shields.io/github/issues/rithytep/generateKhmerIp)](https://github.com/rithytep/generateKhmerIp/issues)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/rithytep/generateKhmerIp/ci.yml)](https://github.com/rithytep/generateKhmerIp/actions)
 
-**Version**: 2.0.0
+**Version**: 2.0.2
 **Maintainer**: Rithy Tep ([YouTube](https://www.youtube.com/@rithy500) | [Facebook](http://fb.com/rithy500))
 **Last Updated**: May 2025
 
@@ -60,7 +60,7 @@ import { generateMultipleKhmerIps } from 'khmer-ip-generator';
 
 const ips = generateMultipleKhmerIps(5); // 5 random IPs
 const uniqueIps = generateMultipleKhmerIps(5, true); // 5 unique IPs
-console.log(ips); // Example: ["103.111.197.24", "115.178.245.12", ...]
+console.log(ips); // Example: ["34.98.224.91", "154.217.71.43", ...]
 ```
 
 ---
@@ -72,16 +72,14 @@ console.log(ips); // Example: ["103.111.197.24", "115.178.245.12", ...]
 | `generateKhmerIp()`          | Generates a random Cambodian IP address.                  | None                                    | `string`      |
 | `generateMultipleKhmerIps(count, unique?)` | Generates multiple random IPs.              | `count: number`, `unique?: boolean`     | `string[]`    |
 | `isKhmerIp(ip)`              | Validates if an IP belongs to a Cambodian range.          | `ip: string`                            | `boolean`     |
-| `getAllKhmerIpRanges()`      | Returns all Cambodian IP ranges.                         | None                                    | `string[]`    |
 | `getKhmerIpRangesCount()`    | Returns the count of Cambodian IP ranges.                 | None                                    | `number`      |
 
 **Example**:
 
 ```javascript
-import { isKhmerIp, getAllKhmerIpRanges } from 'khmer-ip-generator';
+import { isKhmerIp } from 'khmer-ip-generator';
 
 console.log(isKhmerIp("103.111.197.24")); // true or false
-console.log(getAllKhmerIpRanges()); // ["103.111.192.0/18", ...]
 ```
 
 ---
@@ -92,7 +90,7 @@ console.log(getAllKhmerIpRanges()); // ["103.111.192.0/18", ...]
 
 ```javascript
 const { generateKhmerIp } = require('khmer-ip-generator');
-console.log(generateKhmerIp()); // "103.111.197.24"
+console.log(generateKhmerIp()); // "103.206.68.78"
 ```
 
 ### React (Hooks)
@@ -281,7 +279,7 @@ For bugs, feature requests, or questions, visit our [GitHub Issues](https://gith
 
 ---
 
-**Version**: 2.0.0
+**Version**: 2.0.2
 **Repository**: [github.com/rithytep/generateKhmerIp](https://github.com/rithytep/generateKhmerIp)
 
 ---

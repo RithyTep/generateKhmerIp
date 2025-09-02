@@ -452,7 +452,7 @@ function generateMultipleKhmerIps(count = 1, unique = false) {
  * @returns {string[]} Array of all Cambodian IP ranges
  */
 function getAllKhmerIpRanges() {
-  return [...cambodianIpRanges];
+  throw new Error('Access to raw IP ranges is restricted. Use getKhmerIpRangesCount() instead.');
 }
 
 /**
@@ -544,7 +544,6 @@ function isKhmerIpRemote(ip, options = {}) {
 const khmerIpGenerator = {
   generateKhmerIp,
   generateMultipleKhmerIps,
-  getAllKhmerIpRanges,
   getKhmerIpRangesCount,
   isKhmerIp,
   isKhmerIpRemote,
@@ -556,7 +555,6 @@ module.exports = khmerIpGenerator;
 module.exports.default = khmerIpGenerator;
 module.exports.generateKhmerIp = generateKhmerIp;
 module.exports.generateMultipleKhmerIps = generateMultipleKhmerIps;
-module.exports.getAllKhmerIpRanges = getAllKhmerIpRanges;
 module.exports.getKhmerIpRangesCount = getKhmerIpRangesCount;
 module.exports.isKhmerIp = isKhmerIp;
 module.exports.randomCambodianIp = generateKhmerIp;

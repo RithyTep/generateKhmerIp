@@ -12,7 +12,7 @@ export declare function generateMultipleKhmerIps(count?: number, unique?: boolea
 /**
  * Get all available Cambodian IP ranges
  */
-export declare function getAllKhmerIpRanges(): string[];
+// getAllKhmerIpRanges intentionally removed from public types to avoid exposing raw ranges
 
 /**
  * Get the total count of available Cambodian IP ranges
@@ -32,7 +32,6 @@ export declare const generateCambodianIp: typeof generateKhmerIp;
 interface KhmerIpGenerator {
   generateKhmerIp(): string;
   generateMultipleKhmerIps(count?: number, unique?: boolean): string[];
-  getAllKhmerIpRanges(): string[];
   getKhmerIpRangesCount(): number;
   isKhmerIp(ip: string): boolean;
   randomCambodianIp(): string;

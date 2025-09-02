@@ -2,7 +2,6 @@
 const {
   generateKhmerIp,
   generateMultipleKhmerIps,
-  getAllKhmerIpRanges,
   getKhmerIpRangesCount,
   isKhmerIp
 } = require('./index.js');
@@ -51,10 +50,8 @@ const validated = bulk.map(ip => ({ ip, valid: isKhmerIp(ip) }));
 const validCount = validated.filter(x => x.valid).length;
 console.log(`Valid IPs (local heuristic) out of ${bulk.length}:`, validCount);
 
-console.log('\n9. Cross-check ranges count vs. getAllKhmerIpRanges length:');
-const allRanges = getAllKhmerIpRanges();
+console.log('\n9. Cross-check ranges count:');
 console.log('getKhmerIpRangesCount():', getKhmerIpRangesCount());
-console.log('getAllKhmerIpRanges().length:', allRanges.length);
 
 console.log('\nExtended tests completed!');
 

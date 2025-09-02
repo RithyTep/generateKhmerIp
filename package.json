@@ -1,6 +1,6 @@
 {
     "name": "khmer-ip-generator",
-    "version": "2.0.0",
+    "version": "2.0.2",
     "description": "Generate random Cambodian (Khmer) IP addresses from known IP ranges",
     "main": "index.js",
     "module": "index.esm.js",
@@ -18,14 +18,14 @@
         "cambodia",
         "ip",
         "generator",
-    "random",
-    "network"
-  ],
-  "author": "Rithy Tep",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RithyTep/generateKhmerIp.git"
+        "random",
+        "network"
+    ],
+    "author": "Rithy Tep",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RithyTep/generateKhmerIp.git"
     },
     "bugs": {
         "url": "https://github.com/RithyTep/generateKhmerIp/issues"
