@@ -1,5 +1,3 @@
----
-
 # Khmer IP Generator
 
 ![Khmer IP Generator](https://en.ipshu.com/country-picture/KH.png)
@@ -14,8 +12,6 @@ A lightweight, dependency-free JavaScript library for generating random Cambodia
 **Version**: 2.0.3
 **Maintainer**: Rithy Tep ([YouTube](https://www.youtube.com/@rithy500) | [Facebook](http://fb.com/rithy500))
 **Last Updated**: May 2025
-
----
 
 ## Features
 
