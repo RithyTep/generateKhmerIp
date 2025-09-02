@@ -2,7 +2,6 @@ function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Load central CommonJS copy of the ranges so CommonJS consumers reuse the same data
 const cambodianIpRanges = require('./cambodianIpRanges.cjs');
 
 /**
@@ -117,6 +116,19 @@ function isKhmerIp(ip) {
   for (let i = 0; i < cambodianIpRanges.length; i++) {
     if (ipMatchesBase(ip, cambodianIpRanges[i])) return true;
   }
+
+  try {
+    const ipParts = String(ip).split('.');
+    if (ipParts.length === 4) {
+      const prefix2 = `${ipParts[0]}.${ipParts[1]}`;
+      for (let i = 0; i < cambodianIpRanges.length; i++) {
+        const parts = cambodianIpRanges[i].split('.');
+        if (parts.length === 4 && `${parts[0]}.${parts[1]}` === prefix2) return true;
+      }
+    }
+  } catch (e) {
+  }
+
   return false;
 }
 

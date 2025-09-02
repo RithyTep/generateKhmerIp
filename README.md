@@ -9,7 +9,7 @@ A lightweight, dependency-free JavaScript library for generating random Cambodia
 [![GitHub Issues](https://img.shields.io/github/issues/rithytep/generateKhmerIp)](https://github.com/rithytep/generateKhmerIp/issues)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/rithytep/generateKhmerIp/ci.yml)](https://github.com/rithytep/generateKhmerIp/actions)
 
-**Version**: 2.0.7
+**Version**: 2.0.8
 **Maintainer**: Rithy Tep ([YouTube](https://www.youtube.com/@rithy500) | [Facebook](http://fb.com/rithy500))
 **Last Updated**: May 2025
 
@@ -275,7 +275,7 @@ For bugs, feature requests, or questions, visit our [GitHub Issues](https://gith
 
 ---
 
-**Version**: 2.0.7
+**Version**: 2.0.8
 **Repository**: [github.com/rithytep/generateKhmerIp](https://github.com/rithytep/generateKhmerIp)
 
 ---

@@ -100,6 +100,19 @@ function isKhmerIp(ip) {
   for (let i = 0; i < cambodianIpRanges.length; i++) {
     if (ipMatchesBase(ip, cambodianIpRanges[i])) return true;
   }
+
+  // Fallback heuristic: match by first-two-octet prefix
+  try {
+    const ipParts = String(ip).split('.');
+    if (ipParts.length === 4) {
+      const prefix2 = `${ipParts[0]}.${ipParts[1]}`;
+      for (let i = 0; i < cambodianIpRanges.length; i++) {
+        const parts = cambodianIpRanges[i].split('.');
+        if (parts.length === 4 && `${parts[0]}.${parts[1]}` === prefix2) return true;
+      }
+    }
+  } catch (e) {}
+
   return false;
 }
 
