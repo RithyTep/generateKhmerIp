@@ -1,6 +1,6 @@
 {
     "name": "khmer-ip-generator",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "description": "Generate random Cambodian (Khmer) IP addresses from known IP ranges",
     "main": "index.js",
     "module": "index.esm.js",
