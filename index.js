@@ -192,8 +192,6 @@ const khmerIpGenerator = {
   getKhmerIpRangesCount,
   isKhmerIp,
   isKhmerIpRemote,
-  randomCambodianIp: generateKhmerIp,
-  generateCambodianIp: generateKhmerIp
 };
 
 module.exports = khmerIpGenerator;
@@ -202,6 +200,4 @@ module.exports.generateKhmerIp = generateKhmerIp;
 module.exports.generateMultipleKhmerIps = generateMultipleKhmerIps;
 module.exports.getKhmerIpRangesCount = getKhmerIpRangesCount;
 module.exports.isKhmerIp = isKhmerIp;
-module.exports.randomCambodianIp = generateKhmerIp;
-module.exports.generateCambodianIp = generateKhmerIp;
 module.exports.isKhmerIpRemote = isKhmerIpRemote;
