@@ -469,15 +469,96 @@ function getKhmerIpRangesCount() {
  * @returns {boolean} True if the IP is in Cambodian ranges
  */
 function isKhmerIp(ip) {
-  return cambodianIpRanges.includes(ip);
+  for (let i = 0; i < cambodianIpRanges.length; i++) {
+    if (ipMatchesBase(ip, cambodianIpRanges[i])) return true;
+  }
+  return false;
 }
 
-module.exports = {
+const https = require('https');
+
+function isKhmerIpRemote(ip, options = {}) {
+  const serviceBase = options.serviceBase || 'https://ip-api.com/json/';
+  const timeout = typeof options.timeout === 'number' ? options.timeout : 5000;
+  const fallbackToLocal = !!options.fallbackToLocal;
+
+  return new Promise((resolve, reject) => {
+    const url = `${serviceBase}${encodeURIComponent(ip)}?fields=status,countryCode,message`;
+    const req = https.get(url, { timeout }, (res) => {
+      let body = '';
+      res.on('data', (chunk) => (body += chunk));
+      res.on('end', () => {
+        try {
+          const data = JSON.parse(body);
+          if (data && data.status === 'success' && data.countryCode === 'KH') {
+            resolve(true);
+          } else if (fallbackToLocal) {
+            try {
+              resolve(isKhmerIp(ip));
+            } catch (err) {
+              reject(err);
+            }
+          } else {
+            resolve(false);
+          }
+        } catch (err) {
+          if (fallbackToLocal) {
+            try {
+              resolve(isKhmerIp(ip));
+            } catch (e) {
+              reject(e);
+            }
+          } else {
+            reject(err);
+          }
+        }
+      });
+    });
+
+    req.on('error', (err) => {
+      if (fallbackToLocal) {
+        try {
+          resolve(isKhmerIp(ip));
+        } catch (e) {
+          reject(e);
+        }
+      } else {
+        reject(err);
+      }
+    });
+    req.on('timeout', () => {
+      req.destroy();
+      if (fallbackToLocal) {
+        try {
+          resolve(isKhmerIp(ip));
+        } catch (e) {
+          reject(e);
+        }
+      } else {
+        reject(new Error('Request timed out'));
+      }
+    });
+  });
+}
+
+const khmerIpGenerator = {
   generateKhmerIp,
   generateMultipleKhmerIps,
   getAllKhmerIpRanges,
   getKhmerIpRangesCount,
   isKhmerIp,
+  isKhmerIpRemote,
   randomCambodianIp: generateKhmerIp,
   generateCambodianIp: generateKhmerIp
 };
+
+module.exports = khmerIpGenerator;
+module.exports.default = khmerIpGenerator;
+module.exports.generateKhmerIp = generateKhmerIp;
+module.exports.generateMultipleKhmerIps = generateMultipleKhmerIps;
+module.exports.getAllKhmerIpRanges = getAllKhmerIpRanges;
+module.exports.getKhmerIpRangesCount = getKhmerIpRangesCount;
+module.exports.isKhmerIp = isKhmerIp;
+module.exports.randomCambodianIp = generateKhmerIp;
+module.exports.generateCambodianIp = generateKhmerIp;
+module.exports.isKhmerIpRemote = isKhmerIpRemote;
