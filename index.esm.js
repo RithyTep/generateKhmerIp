@@ -71,12 +71,12 @@ const khmerIpGenerator = {
   randomCambodianIp: generateKhmerIp,
   generateCambodianIp: generateKhmerIp
 };
-
 export {
   generateKhmerIp,
   generateMultipleKhmerIps,
   getKhmerIpRangesCount,
-  isKhmerIp
+  isKhmerIp,
+  cambodianIpRanges
 };
 
 export { generateKhmerIp as randomCambodianIp, generateKhmerIp as generateCambodianIp };
